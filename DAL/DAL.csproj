@@ -49,6 +49,7 @@
     <Compile Include="DALPermisos.cs" />
     <Compile Include="DALProductos.cs" />
     <Compile Include="DALUsuario.cs" />
+    <Compile Include="MapHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
