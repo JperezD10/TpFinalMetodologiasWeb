@@ -47,16 +47,7 @@ namespace DAL
 
                     while (reader.Read())
                     {
-                        BECompras compra = new BECompras
-                        {
-                            _idCompra = Convert.ToInt32(reader["idCompra"]),
-                            _idProducto = Convert.ToInt32(reader["idProducto"]),
-                            _cantidad = Convert.ToInt32(reader["cantidad"]),
-                            _totalAPagar = Convert.ToDecimal(reader["totalAPagar"]),
-                            //   _fechaCompra = reader["fechaCompra"] != DBNull.Value ? Convert.ToDateTime(reader["fechaCompra"]) : DateTime.Now, 
-                            _metodoPago = reader["metodoPago"].ToString()
-                        };
-                        compras.Add(compra);
+                        compras.Add(MapHelper.MapearCompra(reader));
                     }
                     reader.Close();
                 }

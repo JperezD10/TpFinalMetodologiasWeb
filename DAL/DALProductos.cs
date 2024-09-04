@@ -28,15 +28,7 @@ namespace DAL
 
                     while (reader.Read())
                     {
-                        BEProductos producto = new BEProductos
-                        {
-                            _idproducto = Convert.ToInt32(reader["idproducto"]),
-                            _nombre = reader["nombre"].ToString(),
-                            _categoria = reader["categoria"].ToString(),
-                            _precio = Convert.ToInt32(reader["precio"]),
-                            _encriptado = reader["Encriptado"].ToString()
-                        };
-                        productos.Add(producto);
+                        productos.Add(MapHelper.MapearProducto(reader));
                     }
                     reader.Close();
                 }
@@ -82,13 +74,7 @@ namespace DAL
 
                     if (reader.Read())
                     {
-                        producto = new BEProductos
-                        {
-                            _idproducto = Convert.ToInt32(reader["idproducto"]),
-                            _nombre = reader["nombre"].ToString(),
-                            _categoria = reader["categoria"].ToString(),
-                            _precio = Convert.ToInt32(reader["precio"])
-                        };
+                        producto = MapHelper.MapearProducto(reader);
                     }
                     reader.Close();
                 }
