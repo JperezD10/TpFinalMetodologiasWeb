@@ -8,6 +8,7 @@ namespace BE
 {
     public class BECompras
     {
+        public int prueba { get; set; }
         private int idCompras;
 
         public int _idCompra
