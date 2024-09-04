@@ -90,8 +90,7 @@ namespace TpFinalMetodologiasWeb
             try
             {
                 int productId = int.Parse(ddlProductos.SelectedValue);
-                BEProductos producto = _bllProductos.ObtenerProductoPorId(productId);
-                txtPrecio.Text = producto._precio.ToString();
+                txtPrecio.Text = _bllProductos.ObtenerProductoPorId(productId)._precio.ToString();
                 CalcularTotal();
             }
             catch (Exception ex)

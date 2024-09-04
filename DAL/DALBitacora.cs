@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using BE;
 
 namespace DAL
 {
     public class DALBitacora
     {
         DALConexion con = new DALConexion();
-        public void RegistrarBitacora(string fecha, string usuario, string movimiento, string modulo)
+        public void RegistrarBitacora(BEBitacora bitacora)
         {
             con.AbrirConexion();
             SqlCommand comando = new SqlCommand();
             comando.Connection = con.con;
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "insert into Bitacora values('" + fecha + "', '" + usuario + "', '" + movimiento + "', '" + modulo + "')";
+            comando.CommandText = $"insert into Bitacora values('{bitacora.Fecha}', '{bitacora.Usuario}', '{bitacora.Movimiento}', '{bitacora.Modulo}')";
             comando.ExecuteNonQuery();
             con.CerrarConexion();
         }

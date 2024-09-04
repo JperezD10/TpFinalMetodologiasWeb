@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DAL;
+using BE;
 
 namespace BLL
 {
     public class BLLBitacora
     {
         DALBitacora ObjBitacora = new DALBitacora();
-        public void RegistrarBitacora(string fecha, string usuario, string movimiento, string modulo)
+        public void RegistrarBitacora(BEBitacora bitacora)
         {
-            ObjBitacora.RegistrarBitacora(fecha, usuario, movimiento, modulo);
+            ObjBitacora.RegistrarBitacora(bitacora);
         }
 
         public DataTable TraerDatos()

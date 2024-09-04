@@ -31,7 +31,7 @@ namespace BLL
         }
 
 
-        public bool CompararContraseñas(string username, string contraseña_encriptada)
+        public bool ContraseñaCorrecta(string username, string contraseña_encriptada)
         {
             try
             {
@@ -41,14 +41,7 @@ namespace BLL
                 ds = ObjUsuario.ObtenerContraseña(username); //obtengo contraseña guardada
                 ContraseñaGuardada = ds.Tables[0].Rows[0][1].ToString();
 
-                if (ContraseñaGuardada == contraseña_encriptada)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return ContraseñaGuardada == contraseña_encriptada;
             }
             catch (Exception ex)
             {
@@ -82,7 +75,7 @@ namespace BLL
         }
 
 
-        public static bool ValidarContraseña(string contraseña)
+        public static bool ContraseñaValida(string contraseña)
         {
             if (contraseña.Length < 8)
                 return false;

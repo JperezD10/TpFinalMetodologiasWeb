@@ -20,6 +20,7 @@ namespace TpFinalMetodologiasWeb
         BLLProductos _bllProductos = new BLLProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label2.Text = "No se detectaron inconsistencias";
             DataSet ds = new DataSet();
             ds = _bllDigito.ConcatenarEncriptarValoresActules();  //Encripto valores de tablas por fila
 
@@ -38,11 +39,7 @@ namespace TpFinalMetodologiasWeb
                     resultado += " Id de usuario: " + row[0].ToString() + ";";
                 }
                 n++;
-                if (resultado == "")
-                {
-                    Label2.Text = "No se detectaron inconsistencias";
-                }
-                else
+                if (!string.IsNullOrEmpty(resultado))
                 {
                     Label2.Text = "Se detectaron registros erroneos en la tabla Usuarios, registros <br/>: " + resultado;
                     Label2.ForeColor = Color.Red;
@@ -59,13 +56,9 @@ namespace TpFinalMetodologiasWeb
                 }
 
                 n++;
-                if (resultado == "")
+                if (!string.IsNullOrEmpty(resultado))
                 {
-                    Label2.Text = "No se detectaron inconsistencias";
-                }
-                else
-                {
-                    Label2.Text = "Se detectaron registros erroneos en la tabla Productos, registros <br/>: " + resultado;
+                    Label2.Text = "Se detectaron registros erroneos en la tabla Usuarios, registros <br/>: " + resultado;
                     Label2.ForeColor = Color.Red;
                 }
             }
@@ -117,13 +110,13 @@ namespace TpFinalMetodologiasWeb
             if (_bll.RestaurarBackup("C:\\Users\\Usuario\\OneDrive\\Escritorio\\EjerciciosADWeb\\TP\\TP2\\Backups" + "\\" + Nombre_Archivo))
             {
                 Label1.Text = "Se realizó el restore correctamente";
-                Label1.ForeColor = System.Drawing.Color.Green;
+                Label1.ForeColor = Color.Green;
                 Label2.Visible = false;
             }
             else
             {
                 Label1.Text = "Error, no se realizó el restore";
-                Label1.ForeColor = System.Drawing.Color.Red;
+                Label1.ForeColor = Color.Red;
             }
         }
     }

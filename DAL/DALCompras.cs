@@ -14,23 +14,16 @@ namespace DAL
 
         public void AgregarCompra(BECompras compra)
         {
-            try
+            using (SqlConnection con = _con.AbrirConexion())
             {
-                using (SqlConnection con = _con.AbrirConexion())
-                {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Compras (idProducto, cantidad, totalAPagar, fechaCompra, metodoPago) VALUES (@idProducto, @cantidad, @totalAPagar, @fechaCompra, @metodoPago)", con);
-                    cmd.Parameters.AddWithValue("@idProducto", compra._idProducto);
-                    cmd.Parameters.AddWithValue("@cantidad", compra._cantidad);
-                    cmd.Parameters.AddWithValue("@totalAPagar", compra._totalAPagar);
-                    //  cmd.Parameters.AddWithValue("@fechaCompra", compra._fechaCompra != null ? (DateTime)compra._fechaCompra : DateTime.Now); // Usar la fecha actual si _fechaCompra es nulo
+                SqlCommand cmd = new SqlCommand("INSERT INTO Compras (idProducto, cantidad, totalAPagar, fechaCompra, metodoPago) VALUES (@idProducto, @cantidad, @totalAPagar, @fechaCompra, @metodoPago)", con);
+                cmd.Parameters.AddWithValue("@idProducto", compra._idProducto);
+                cmd.Parameters.AddWithValue("@cantidad", compra._cantidad);
+                cmd.Parameters.AddWithValue("@totalAPagar", compra._totalAPagar);
+                //  cmd.Parameters.AddWithValue("@fechaCompra", compra._fechaCompra != null ? (DateTime)compra._fechaCompra : DateTime.Now); // Usar la fecha actual si _fechaCompra es nulo
 
-                    cmd.Parameters.AddWithValue("@metodoPago", compra._metodoPago);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al agregar la compra: " + ex.Message);
+                cmd.Parameters.AddWithValue("@metodoPago", compra._metodoPago);
+                cmd.ExecuteNonQuery();
             }
         }
 
