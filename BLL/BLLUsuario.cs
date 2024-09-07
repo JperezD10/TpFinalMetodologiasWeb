@@ -60,7 +60,7 @@ namespace BLL
                 {
                     Usuario = row["usuario"].ToString(),
                     Contraseña = row["contraseña"].ToString(),
-                    Rol = row["idRol"].ToString()
+                    Rol = (int)row["idRol"]
                 };
             }
             return null;

@@ -18,7 +18,7 @@ namespace TpFinalMetodologiasWeb
         BLLDVH _bllDigito = new BLLDVH();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LBLError.Visible = false;
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)

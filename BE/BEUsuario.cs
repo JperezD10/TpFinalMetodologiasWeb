@@ -31,6 +31,8 @@ namespace BE
             get { return _contraseña; }
             set { _contraseña = value; }
         }
-        public string Rol { get; set; }
+        public int Rol { get; set; }
+
+        public string ConcatenarProps() => _id_usuario + _usuario + _contraseña + Rol;
     }
 }

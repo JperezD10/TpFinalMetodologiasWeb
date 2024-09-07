@@ -26,5 +26,13 @@ namespace DAL
                 _precio = Convert.ToInt32(reader["precio"]),
                 _encriptado = reader["Encriptado"].ToString()
             };
+
+        public static BEUsuario MapearUsuario(SqlDataReader reader) =>
+            new BEUsuario
+            {
+                Usuario = reader["usuario"].ToString(),
+                Contraseña = reader["contraseña"].ToString(),
+                Rol = Convert.ToInt32(reader["idRol"]),
+            };
     }
 }
