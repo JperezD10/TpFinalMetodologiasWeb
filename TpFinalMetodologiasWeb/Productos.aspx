@@ -83,7 +83,7 @@
             </table>
         </div>
     </div>
-
+    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>
 
