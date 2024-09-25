@@ -23,11 +23,13 @@ namespace BLL
             try
             {
                 var productos = _dalProductos.ObtenerProductos();
+                if (!productos.Any())
+                    return Result<List<BEProductos>>.Error("No hay productos. Consulte con el admin", productos);
                 return Result<List<BEProductos>>.Success(productos);
             }
             catch (Exception ex)
             {
-                return Result<List<BEProductos>>.Error("Ha ocurrido un error", new List<BEProductos>());
+                return Result<List<BEProductos>>.Error($"Ha ocurrido un error: {ex.Message}", new List<BEProductos>());
             }
         }
 

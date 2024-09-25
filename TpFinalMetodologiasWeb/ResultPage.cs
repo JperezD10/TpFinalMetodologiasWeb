@@ -16,7 +16,7 @@ namespace TpFinalMetodologiasWeb
             {
                 label.Text = result.Message;
             }
-            label.Visible = result.Ok;
+            label.Visible = !result.Ok;
         }
     }
 }

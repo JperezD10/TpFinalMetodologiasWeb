@@ -88,5 +88,23 @@ namespace BLL
             return tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial;
         }
 
+        public Result<BEUsuario> Login(string username, string password)
+        {
+            try
+            {
+                if (!ContraseñaValida(password))
+                    return Result<BEUsuario>.Error("La contraseña no cumple con los requisitos de seguridad.", null);
+                password = GetEncriptado(password);
+                var dalResul = ObjUsuario.Login(username, password);
+                if (dalResul == null)
+                    return Result<BEUsuario>.Error("Usuario o Contraseña incorrecta", dalResul);
+                return Result<BEUsuario>.Success(dalResul);
+            }
+            catch (Exception ex)
+            {
+                return Result<BEUsuario>.Error($"Ha ocurrido un error: {ex.Message}", null);
+            }
+            
+        }
     }
 }

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace TpFinalMetodologiasWeb
 {
-    public partial class Productos : System.Web.UI.Page
+    public partial class Productos : ResultPage
     {
         private BLLProductos _bllProductos = new BLLProductos();
 
@@ -42,16 +42,10 @@ namespace TpFinalMetodologiasWeb
         }
         private void CargarProductos()
         {
-            try
-            {
-                List<BEProductos> productos = _bllProductos.ObtenerProductos();
-                RepeaterProductos.DataSource = productos;
-                RepeaterProductos.DataBind();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Error al cargar productos: " + ex.Message);
-            }
+            var productos = _bllProductos.GetProductos();
+            RepeaterProductos.DataSource = productos.Data;
+            RepeaterProductos.DataBind();
+            this.ValidateResponse(productos, lblError);
         }
     }
 }

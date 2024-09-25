@@ -104,7 +104,7 @@ namespace DAL
                 sqlCommand.ExecuteNonQuery();
                 _transaction.Commit();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _transaction.Rollback();
                 return 0;

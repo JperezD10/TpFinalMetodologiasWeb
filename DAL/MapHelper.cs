@@ -1,5 +1,6 @@
 ﻿using BE;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -33,6 +34,14 @@ namespace DAL
                 Usuario = reader["usuario"].ToString(),
                 Contraseña = reader["contraseña"].ToString(),
                 Rol = Convert.ToInt32(reader["idRol"]),
+            };
+
+        public static BEUsuario MapearUsuario(DataRow Row) =>
+            new BEUsuario
+            {
+                Usuario = Row["usuario"].ToString(),
+                Contraseña = Row["contraseña"].ToString(),
+                Rol = Convert.ToInt32(Row["idRol"]),
             };
     }
 }

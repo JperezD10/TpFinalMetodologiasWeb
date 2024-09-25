@@ -1,4 +1,6 @@
-﻿namespace BE
+﻿using System;
+
+namespace BE
 {
     public class BEBitacora
     {

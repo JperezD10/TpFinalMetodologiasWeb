@@ -279,6 +279,9 @@
     <Compile Include="Restore.aspx.designer.cs">
       <DependentUpon>Restore.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ResultPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

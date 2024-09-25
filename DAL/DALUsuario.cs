@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 using System.Security.Cryptography;
+using BE;
 
 namespace DAL
 {
@@ -93,6 +94,17 @@ namespace DAL
             da.Fill(dt);
             con.CerrarConexion();
             return dt;
+        }
+
+        public BEUsuario Login(string username, string password)
+        {
+            var conn = DALConexion.GetInstance;
+            var datatable = conn.Leer($"SELECT * FROM USUARIOS WHERE usuario = '{username}' and contraseña = '{password}'", null);
+            foreach (DataRow dr in datatable.Rows)
+            {
+                return MapHelper.MapearUsuario(dr);
+            }
+            return null;
         }
     }
 }
