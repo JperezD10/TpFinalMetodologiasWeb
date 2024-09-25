@@ -2,6 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Bitácora</h3>
-    <asp:GridView ID="GridView1" runat="server">
+    <asp:GridView CssClass="table table-hover" ID="GridView1" runat="server">
     </asp:GridView>
 </asp:Content>

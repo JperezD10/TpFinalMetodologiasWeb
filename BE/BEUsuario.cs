@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class BEUsuario
+    public abstract class BEUsuario
     {
         private string _id_usuario;
 
@@ -34,5 +34,7 @@ namespace BE
         public int Rol { get; set; }
 
         public string ConcatenarProps() => _id_usuario + _usuario + _contraseña + Rol;
+
+        public abstract string DefaultPage { get;}
     }
 }

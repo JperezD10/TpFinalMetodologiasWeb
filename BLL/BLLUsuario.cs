@@ -56,12 +56,7 @@ namespace BLL
             if (ds.Tables[0].Rows.Count > 0)
             {
                 DataRow row = ds.Tables[0].Rows[0];
-                return new BEUsuario
-                {
-                    Usuario = row["usuario"].ToString(),
-                    Contraseña = row["contraseña"].ToString(),
-                    Rol = (int)row["idRol"]
-                };
+                return MapHelper.MapearUsuario(row);
             }
             return null;
         }

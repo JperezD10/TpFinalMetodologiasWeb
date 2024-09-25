@@ -13,7 +13,7 @@ namespace TpFinalMetodologiasWeb
     public partial class Login : ResultPage
     {
         BLLUsuario BLLUsuario = new BLLUsuario();
-        BEUsuario BEUsuario = new BEUsuario();
+        BEUsuario BEUsuario;
         BLLBitacora _bitacora = new BLLBitacora();
         BLLDVH _bllDigito = new BLLDVH();
         protected void Page_Load(object sender, EventArgs e)
@@ -62,8 +62,7 @@ namespace TpFinalMetodologiasWeb
                 _bitacora.RegistrarBitacora(new BEBitacora(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), bllResult.Data.Usuario, "Logueo de usuario", "Módulo Login"));
                 Session["Rol"] = bllResult.Data.Rol;
                 Session["Usuario"] = bllResult.Data.Usuario;
-                //aca voy a poner un strategy para que dependiendo el usuario, te mande a tal pantalla
-                Response.Redirect("MenuPrincipal.aspx");
+                Response.Redirect($"{bllResult.Data.DefaultPage}.aspx");
             }
         }
 

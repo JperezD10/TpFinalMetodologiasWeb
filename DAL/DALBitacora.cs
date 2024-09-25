@@ -26,7 +26,7 @@ namespace DAL
         public DataTable TraerDatos()
         {
             con.AbrirConexion();
-            SqlDataAdapter da = new SqlDataAdapter("select * from Bitacora order by fecha desc", con.con);
+            SqlDataAdapter da = new SqlDataAdapter("select top 20 fecha as Fecha, usuario as Usuario, movimiento as Movimiento, modulo as Modulo from Bitacora order by fecha desc", con.con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.CerrarConexion();

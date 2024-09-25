@@ -28,20 +28,41 @@ namespace DAL
                 _encriptado = reader["Encriptado"].ToString()
             };
 
-        public static BEUsuario MapearUsuario(SqlDataReader reader) =>
-            new BEUsuario
+        public static BEUsuario MapearUsuario(SqlDataReader reader)
+        {
+            if (Convert.ToInt32(reader["idRol"]) == (int)RolUsuario.WEB_MASTER)
+                return new UsuarioWebMaster
+                {
+                    Usuario = reader["usuario"].ToString(),
+                    Contraseña = reader["contraseña"].ToString(),
+                    Rol = Convert.ToInt32(reader["idRol"]),
+                };
+            return new UsuarioCliente
             {
                 Usuario = reader["usuario"].ToString(),
                 Contraseña = reader["contraseña"].ToString(),
                 Rol = Convert.ToInt32(reader["idRol"]),
             };
+        }
+            
 
-        public static BEUsuario MapearUsuario(DataRow Row) =>
-            new BEUsuario
+        public static BEUsuario MapearUsuario(DataRow Row)
+        {
             {
-                Usuario = Row["usuario"].ToString(),
-                Contraseña = Row["contraseña"].ToString(),
-                Rol = Convert.ToInt32(Row["idRol"]),
-            };
+                if (Convert.ToInt32(Row["idRol"]) == (int)RolUsuario.WEB_MASTER)
+                    return new UsuarioWebMaster
+                    {
+                        Usuario = Row["usuario"].ToString(),
+                        Contraseña = Row["contraseña"].ToString(),
+                        Rol = Convert.ToInt32(Row["idRol"]),
+                    };
+                return new UsuarioCliente
+                {
+                    Usuario = Row["usuario"].ToString(),
+                    Contraseña = Row["contraseña"].ToString(),
+                    Rol = Convert.ToInt32(Row["idRol"]),
+                };
+            }
+        }
     }
 }
