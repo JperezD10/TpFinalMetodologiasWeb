@@ -17,9 +17,9 @@ namespace BLL
             ObjBitacora.RegistrarBitacora(bitacora);
         }
 
-        public DataTable TraerDatos()
+        public List<BEBitacora> TraerDatos()
         {
-            return ObjBitacora.TraerDatos();
+            return ObjBitacora.TraerBitacoraList();
         }
     }
 }

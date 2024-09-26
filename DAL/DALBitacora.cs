@@ -32,5 +32,17 @@ namespace DAL
             con.CerrarConexion();
             return dt;
         }
+
+        public List<BEBitacora> TraerBitacoraList()
+        {
+            var conn = DALConexion.GetInstance;
+            var datatable = conn.Leer($"select top 20 fecha , usuario , movimiento , modulo from Bitacora order by fecha desc", null);
+            var list = new List<BEBitacora>();
+            foreach (DataRow dr in datatable.Rows)
+            {
+                list.Add(MapHelper.MapearBitacora(dr));
+            }
+            return list;
+        }
     }
 }

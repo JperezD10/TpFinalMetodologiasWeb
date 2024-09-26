@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBEBitacora xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BEBitacora>
+    <Fecha>26/9/2024 14:41:19</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>26/9/2024 14:40:50</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>26/9/2024 14:40:12</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 17:22:49</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 17:22:17</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 17:18:17</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 17:17:32</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 17:17:07</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 00:26:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/9/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>24/9/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>4/9/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>4/9/2024 00:00:00</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>31/8/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>31/8/2024 00:00:00</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>25/8/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>20/8/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>20/8/2024 00:00:00</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>19/8/2024 00:00:00</Fecha>
+    <Usuario>Maite</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+  <BEBitacora>
+    <Fecha>19/8/2024 00:00:00</Fecha>
+    <Usuario>Nadia</Usuario>
+    <Movimiento>Logueo de usuario</Movimiento>
+    <Modulo>Módulo Login</Modulo>
+  </BEBitacora>
+</ArrayOfBEBitacora>

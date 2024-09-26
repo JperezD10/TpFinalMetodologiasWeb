@@ -64,5 +64,14 @@ namespace DAL
                 };
             }
         }
+
+        public static BEBitacora MapearBitacora(DataRow Row) =>
+            new BEBitacora
+            {
+                Usuario = Row["usuario"].ToString(),
+                Fecha = Row["fecha"].ToString(),
+                Modulo = Row["modulo"].ToString(),
+                Movimiento = Row["movimiento"].ToString(),
+            };
     }
 }
