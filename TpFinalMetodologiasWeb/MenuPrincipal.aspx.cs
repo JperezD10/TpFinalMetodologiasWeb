@@ -13,6 +13,8 @@ namespace TpFinalMetodologiasWeb
         public BLLPermisos permisos = new BLLPermisos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+                Response.Redirect("Login.aspx");
             /*if (Session["Usuario"] != null && Session["Rol"] != null)
             {
                 string rol = Session["Rol"].ToString();

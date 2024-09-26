@@ -15,31 +15,6 @@
     </p>
     <br />
     <br />
-    
-    <p style="font-size: 16px">Somos la Librería "El Libro Loco", tu destino para encontrar todo lo que
-        necesitas para potenciar tu aprendizaje y creatividad. Ofrecemos una amplia variedad de productos de
-        calidad, desde materiales de escritura hasta servicios de encuadernación y personalización. Con atención
-        personalizada, beneficios exclusivos para clientes frecuentes y la comodidad de compras online con entrega a
-        domicilio, nos esforzamos por ser tu aliado en el camino hacia el conocimiento y la expresión. ¡Descubre la locura
-        de aprender con nosotros!</p>
-
-     <%--mapa--%>
-    <div style="margin-left:300px; margin-right:300px">
-    <iframe id="mapa" style="width: 600px; height: 400px"></iframe>
-        <script>
-            navigator.geolocation.getCurrentPosition(localizame);
-
-            function localizame(posicion) {
-                const latitud = posicion.coords.latitude;
-                const longitud = posicion.coords.longitude;
-                document.getElementById('mapa').src = "http://maps.google.com/maps?q=@" + latitud + "," +
-                    longitud + "&z=17&output=embed";
-            }
-        </script>
-        </div>
-    <%--fin mapa--%>
-    <br />
-    <br />
     <br />
     <br />
     <br />
@@ -62,6 +37,4 @@
     </div>
     <br />
     <%--fin calendario--%>
-
-    <img alt="ImgLibreria" src="ImagenLibreria.jpg" style="width: 950px; height: 246px; margin-left: 110px" />
 </asp:Content>
