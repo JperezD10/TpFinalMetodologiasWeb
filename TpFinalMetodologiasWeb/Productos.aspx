@@ -1,70 +1,97 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="TpFinalMetodologiasWeb.Productos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-
-
-
-
-    <style type="text/css">
-        .container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 20px;
+    <style>
+        .productos-form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            text-align: center;
+        #MainContent h1, #MainContent h2 {
+            color: #007bff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .Registro {
-            display: flex;
-            flex-direction: column;
-            background-color: lightpink;
-            text-align: left;
-            width: 50%;
-            padding: 10px;
+        #MainContent label {
+            font-size: 1.2em;
+            color: #333;
         }
 
-        .Tabla {
-            display: flex;
-            flex-direction: column;
-            background-color: lightyellow;
-            padding: 10px;
-            width: 50%;
+        #MainContent .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+        }
+
+        #MainContent #ButtonSubmit {
+            background-color: #007bff;
+            border: none;
+            padding: 12px;
+            font-size: 1.2em;
+        }
+
+            #MainContent #ButtonSubmit:hover {
+                background-color: #0056b3;
+            }
+
+        .productos-registrados h2 {
+            font-size: 1.8em;
+        }
+
+        .table {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .table thead {
+                background-color: #f8f9fa;
+            }
+
+        .text-danger {
+            font-weight: bold;
+            font-size: 1.1em;
         }
     </style>
+    <div class="container my-5 productos-form">
+        <h1 class="text-center mb-4">Registrar Productos</h1>
 
-
-
-
-    <div class="container">
-        <div class="Registro">
-            <h1>Registrar Productos</h1>
-            <p>
-                Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtnombre" runat="server"></asp:TextBox>
-            </p>
-            <p>
-                &nbsp;Categoria: 
-                <asp:TextBox ID="txtcategoria" runat="server"></asp:TextBox>
-            </p>
-            <p>
-                Precio:
-                <asp:TextBox ID="txtprecio" runat="server"></asp:TextBox>
-            </p>
-            <p>
-                <asp:Button ID="ButtonSubmit" runat="server" Text="Registrar" OnClick="ButtonSubmit_Click" />
-            </p>
+        <div class="row mb-4">
+            <div class="col-md-6 form-group">
+                <label for="txtnombre" class="form-label">Nombre:</label>
+                <asp:TextBox ID="txtnombre" runat="server" CssClass="form-control shadow-sm"></asp:TextBox>
+            </div>
         </div>
 
-        <div class="Tabla">
-            <h2>Productos Registrados</h2>
-            <table class="table table-bordered">
-                <thead>
+        <div class="row mb-4">
+            <div class="col-md-6 form-group">
+                <label for="txtcategoria" class="form-label">Categoría:</label>
+                <asp:TextBox ID="txtcategoria" runat="server" CssClass="form-control shadow-sm"></asp:TextBox>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6 form-group">
+                <label for="txtprecio" class="form-label">Precio:</label>
+                <asp:TextBox ID="txtprecio" runat="server" CssClass="form-control shadow-sm"></asp:TextBox>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <asp:Button ID="ButtonSubmit" runat="server" CssClass="btn btn-primary w-100 shadow-lg" Text="Registrar" OnClick="ButtonSubmit_Click" />
+            </div>
+        </div>
+
+        <div class="productos-registrados mt-5">
+            <h2 class="mb-4">Productos Registrados</h2>
+            <table class="table table-bordered shadow-sm">
+                <thead class="table-light">
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Categoria</th>
+                        <th>Categoría</th>
                         <th>Precio</th>
                     </tr>
                 </thead>
@@ -82,8 +109,9 @@
                 </tbody>
             </table>
         </div>
+
+        <asp:Label ID="lblError" runat="server" Text="Label" CssClass="text-danger mt-3"></asp:Label>
     </div>
-    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>
 

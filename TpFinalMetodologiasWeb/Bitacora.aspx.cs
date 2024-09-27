@@ -14,6 +14,7 @@ namespace TpFinalMetodologiasWeb
     {
         BLLBitacora _bitacora;
         List<BEBitacora> listBitacora;
+        public bool showMessage { get; set; } = false;
         public Bitacora()
         {
             _bitacora = new BLLBitacora();
@@ -28,7 +29,7 @@ namespace TpFinalMetodologiasWeb
         protected void btnConnectWS_Click(object sender, EventArgs e)
         {
             WebService1 webService1 = new WebService1();
-            webService1.ExportarBitacora(listBitacora);
+            showMessage = webService1.ExportarBitacora(listBitacora);
         }
     }
 }

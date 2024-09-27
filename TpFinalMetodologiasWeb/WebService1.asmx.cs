@@ -21,21 +21,29 @@ namespace TpFinalMetodologiasWeb
     {
 
         [WebMethod]
-        public void ExportarBitacora(List<BEBitacora> bitacora)
+        public bool ExportarBitacora(List<BEBitacora> bitacora)
         {
-            string ruta = Server.MapPath("~/Archivos/bitacoras.xml");
-
-            string directorio = Path.GetDirectoryName(ruta);
-            if (!Directory.Exists(directorio))
+            try
             {
-                Directory.CreateDirectory(directorio);
+                string ruta = Server.MapPath("~/Archivos/bitacoras.xml");
+
+                string directorio = Path.GetDirectoryName(ruta);
+                if (!Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+
+                XmlSerializer serializer = new XmlSerializer(typeof(List<BEBitacora>));
+
+                using (StreamWriter writer = new StreamWriter(ruta))
+                {
+                    serializer.Serialize(writer, bitacora);
+                }
+                return true;
             }
-
-            XmlSerializer serializer = new XmlSerializer(typeof(List<BEBitacora>));
-
-            using (StreamWriter writer = new StreamWriter(ruta))
+            catch (Exception)
             {
-                serializer.Serialize(writer, bitacora);
+                return false;
             }
         }
     }

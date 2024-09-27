@@ -10,6 +10,13 @@
             </div>
         </div>
 
+        <%if (showMessage)
+            {%>
+        <div class="alert alert-success" role="alert">
+            Se ha generado un XML correctamente
+        </div>
+        <%} %>
+
         <div class="row">
             <div class="col-md-12">
                 <asp:GridView CssClass="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False">

@@ -18,6 +18,7 @@ namespace TpFinalMetodologiasWeb
             if (!IsPostBack)
             {
                 CargarProductos();
+                lblError.Visible = false;
             }
         }
 
@@ -37,7 +38,8 @@ namespace TpFinalMetodologiasWeb
             }
             catch (Exception ex)
             {
-                Response.Write("Error: " + ex.Message);
+                lblError.Text = ex.Message;
+                lblError.Visible = true;
             }
         }
         private void CargarProductos()
