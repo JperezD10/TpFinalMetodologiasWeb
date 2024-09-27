@@ -8,22 +8,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: #f4efe6; /* Un tono crema que evoca páginas de libro */
-            font-family: 'Georgia', serif; /* Fuente clásica, elegante y literaria */
+            background-color: #f4efe6;
+            font-family: 'Georgia', serif;
         }
 
         .login-container {
             max-width: 450px;
             margin: 100px auto;
-            background-color: #fff7e1; /* Fondo suave amarillo pálido */
+            background-color: #fff7e1;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #c7a17a; /* Un toque marrón claro */
+            border: 2px solid #c7a17a;
         }
 
         h2, h3 {
-            color: #8b4513; /* Marrón oscuro para darle ese toque de biblioteca */
+            color: #8b4513;
             font-weight: bold;
         }
 
@@ -31,12 +31,12 @@
             border-radius: 8px;
             padding: 10px;
             font-size: 1.1em;
-            border: 1px solid #c7a17a; /* Bordes con tono marrón claro */
-            background-color: #fff8e1; /* Fondo crema claro */
+            border: 1px solid #c7a17a;
+            background-color: #fff8e1;
         }
 
         #btnIngresar {
-            background-color: #8b4513; /* Botón marrón oscuro */
+            background-color: #8b4513;
             border: none;
             padding: 10px;
             font-size: 1.1em;
@@ -47,7 +47,7 @@
         }
 
         #btnIngresar:hover {
-            background-color: #a0522d; /* Marrón más claro en hover */
+            background-color: #a0522d;
         }
 
         #LBLError {
@@ -55,9 +55,8 @@
             font-size: 14px;
         }
 
-        /* Extra: sombra sutil en los inputs para darle profundidad */
         .form-control:focus {
-            box-shadow: 0 0 8px rgba(139, 69, 19, 0.5); /* Sombra marrón cuando se selecciona */
+            box-shadow: 0 0 8px rgba(139, 69, 19, 0.5);
             border-color: #8b4513;
         }
 
