@@ -130,6 +130,7 @@
     <Content Include="ImagenLibreria.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="MenuAdmin.aspx" />
     <Content Include="MenuPrincipal.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="Restore.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.aspx.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.aspx.designer.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.aspx.cs">
       <DependentUpon>MenuPrincipal.aspx</DependentUpon>

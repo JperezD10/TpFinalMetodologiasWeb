@@ -22,8 +22,8 @@ namespace TpFinalMetodologiasWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             listBitacora = _bitacora.TraerDatos();
-            GridView1.DataSource = listBitacora;
-            GridView1.DataBind();
+            Repeater1.DataSource = listBitacora;
+            Repeater1.DataBind();
         }
 
         protected void btnConnectWS_Click(object sender, EventArgs e)

@@ -8,6 +8,6 @@ namespace BE
 {
     public class UsuarioWebMaster : BEUsuario
     {
-        public override string DefaultPage => "Bitacora";
+        public override string DefaultPage => "MenuAdmin";
     }
 }
