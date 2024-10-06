@@ -93,6 +93,8 @@ namespace BLL
                 var dalResul = ObjUsuario.Login(username, password);
                 if (dalResul == null)
                     return Result<BEUsuario>.Error("Usuario o Contraseña incorrecta", dalResul);
+                if (dalResul.Bloqueado)
+                    return Result<BEUsuario>.Error("El usuario se encuentra bloqueado. Comuniquese con el administrador", dalResul);
                 return Result<BEUsuario>.Success(dalResul);
             }
             catch (Exception ex)
