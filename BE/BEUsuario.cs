@@ -33,6 +33,9 @@ namespace BE
         }
         public int Rol { get; set; }
 
+        public int IntentosRestantes { get; set; }
+        public bool Bloqueado { get; set; }
+
         public string ConcatenarProps() => _id_usuario + _usuario + _contraseña + Rol;
 
         public abstract string DefaultPage { get;}

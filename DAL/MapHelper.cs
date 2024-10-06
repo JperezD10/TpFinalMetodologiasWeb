@@ -55,12 +55,16 @@ namespace DAL
                         Usuario = Row["usuario"].ToString(),
                         Contraseña = Row["contraseña"].ToString(),
                         Rol = Convert.ToInt32(Row["idRol"]),
+                        Bloqueado = (bool)Row["Bloqueado"],
+                        IntentosRestantes = Convert.ToInt32(Row["IntentosRestantes"])
                     };
                 return new UsuarioCliente
                 {
                     Usuario = Row["usuario"].ToString(),
                     Contraseña = Row["contraseña"].ToString(),
                     Rol = Convert.ToInt32(Row["idRol"]),
+                    Bloqueado = (bool)Row["Bloqueado"],
+                    IntentosRestantes = Convert.ToInt32(Row["IntentosRestantes"])
                 };
             }
         }
