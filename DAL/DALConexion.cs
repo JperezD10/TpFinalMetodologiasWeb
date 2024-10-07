@@ -16,13 +16,13 @@ namespace DAL
         public DALConexion()
         {
             /*NADIA CONEXION*/
-            //con = new SqlConnection("Data Source=DESKTOP-DQVMASA\\MSSQLSERVER01;Initial Catalog=Libreria;Integrated Security=True");
+            con = new SqlConnection("Data Source=DESKTOP-DQVMASA\\MSSQLSERVER01;Initial Catalog=Libreria;Integrated Security=True");
 
             // MAITE
             // con = new SqlConnection("Data Source=MAITE15\\MSSQLSERVER01;Initial Catalog=sistemalibreria;Integrated Security=True;TrustServerCertificate=True");
 
             //conexion juli
-            con = new SqlConnection("Data Source=.;Initial Catalog=Libreria;Integrated Security=True");
+            //con = new SqlConnection("Data Source=.;Initial Catalog=Libreria;Integrated Security=True");
         }
 
         private static DALConexion _instance = null;

@@ -45,6 +45,7 @@
     <Compile Include="BLLBitacora.cs" />
     <Compile Include="BLLCompras.cs" />
     <Compile Include="BLLDVH.cs" />
+    <Compile Include="BLLDVV.cs" />
     <Compile Include="BLLPermisos.cs" />
     <Compile Include="BLLProductos.cs" />
     <Compile Include="BLLUsuario.cs" />
