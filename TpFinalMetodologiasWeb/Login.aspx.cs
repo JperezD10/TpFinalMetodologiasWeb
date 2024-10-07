@@ -24,7 +24,7 @@ namespace TpFinalMetodologiasWeb
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
 
-            string encriptado;
+            //string encriptado;
             //Se realiza DVH
             DataSet ds = new DataSet();
             ds = _bllDigito.ConcatenarEncriptarValoresActules();  //Encripto valores de tablas
@@ -53,6 +53,13 @@ namespace TpFinalMetodologiasWeb
                     return;
                 }
             }
+
+            //DIGITO VERTICAL  -> hacer validacion
+           // BLLDVV _dvv = new BLLDVV();
+            //_dvv.RealizarDigitoVertical();
+
+
+
 
             var bllResult = BLLUsuario.Login(txtUsuario.Text, txtContraseña.Text);
 
