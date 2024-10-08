@@ -105,7 +105,7 @@ namespace TpFinalMetodologiasWeb
         {
             string fileName = Path.GetFileName(FileUpload1.FileName);
 
-            string filePath = Server.MapPath("~/Uploads/") + fileName;
+            string filePath = Server.MapPath("~/Backups/") + fileName;
             FileUpload1.SaveAs(filePath);
             Label1.Text = "";
 
