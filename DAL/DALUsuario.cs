@@ -58,13 +58,11 @@ namespace DAL
             // NADIA CONEXION con=new SqlConnection("Data Source=DESKTOP-DQVMASA\\MSSQLSERVER01;Initial Catalog=Libreria;Integrated Security=True");
 
             DataSet ds = new DataSet();
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-DQVMASA\\MSSQLSERVER01;Initial Catalog=Libreria;Integrated Security=True"))
-            {
-                string query = "SELECT * FROM Usuarios WHERE usuario=@usuario";
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                da.SelectCommand.Parameters.AddWithValue("@usuario", usuario);
-                da.Fill(ds);
-            }
+            var con = DALConexion.GetInstance.con;
+            string query = "SELECT * FROM Usuarios WHERE usuario=@usuario";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            da.SelectCommand.Parameters.AddWithValue("@usuario", usuario);
+            da.Fill(ds);
             return ds;
         }
 

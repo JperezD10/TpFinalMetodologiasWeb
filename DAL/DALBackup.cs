@@ -47,7 +47,7 @@ namespace DAL
                 comando.ExecuteNonQuery();
 
                 comando.CommandText = "USE [master]" +
-                    " RESTORE DATABASE[Libreria] FROM DISK = '" + ruta + "' WITH REPLACE;" +
+                    " RESTORE DATABASE [Libreria] FROM DISK = '" + ruta + "' WITH REPLACE;" +
                     " ALTER DATABASE [Libreria] SET MULTI_USER;";
 
 

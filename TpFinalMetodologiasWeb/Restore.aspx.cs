@@ -103,19 +103,22 @@ namespace TpFinalMetodologiasWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string Nombre_Archivo = Path.GetFileName(FileUpload1.FileName);
+            string fileName = Path.GetFileName(FileUpload1.FileName);
+
+            string filePath = Server.MapPath("~/Uploads/") + fileName;
+            FileUpload1.SaveAs(filePath);
             Label1.Text = "";
 
-
-            if (_bll.RestaurarBackup("C:\\Users\\Usuario\\OneDrive\\Escritorio\\EjerciciosADWeb\\TP\\TP2\\Backups" + "\\" + Nombre_Archivo))
+            try
             {
+                _bll.RestaurarBackup(filePath);
                 Label1.Text = "Se realizó el restore correctamente";
                 Label1.ForeColor = Color.Green;
                 Label2.Visible = false;
             }
-            else
+            catch (Exception ex)
             {
-                Label1.Text = "Error, no se realizó el restore";
+                Label1.Text = $"Error: {ex.Message}";
                 Label1.ForeColor = Color.Red;
             }
         }
