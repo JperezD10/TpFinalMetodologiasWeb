@@ -18,5 +18,15 @@ namespace TpFinalMetodologiasWeb
             }
             label.Visible = !result.Ok;
         }
+
+        protected void ValidatePermission(RolUsuario rol)
+        {
+            if (Session["Usuario"] == null)
+                Response.Redirect("Login.aspx");
+
+            BEUsuario usuario = (BEUsuario)Session["Usuario"];
+            if (usuario.Rol != (int)rol)
+                Response.Redirect("UnauthorizatedAccess.aspx");
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace TpFinalMetodologiasWeb
 {
-    public partial class Backup : System.Web.UI.Page
+    public partial class Backup : ResultPage
     {
         BLLBackup _backup;
         BLLDVH _bllDigito;
@@ -21,6 +22,7 @@ namespace TpFinalMetodologiasWeb
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidatePermission(RolUsuario.WEB_MASTER);
             CargarTabla();
         }
         protected void Button1_Click2(object sender, EventArgs e)

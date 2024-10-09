@@ -9,12 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace TpFinalMetodologiasWeb
 {
-    public partial class Compras : System.Web.UI.Page
+    public partial class Compras : ResultPage
     {
         private BLLProductos _bllProductos = new BLLProductos();
         private BLLCompras _bllCompras = new BLLCompras();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidatePermission(RolUsuario.CLIENTE);
             if (!IsPostBack)
             {
                 CargarProductos();

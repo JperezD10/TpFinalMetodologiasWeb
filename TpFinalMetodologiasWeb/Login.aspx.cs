@@ -67,8 +67,7 @@ namespace TpFinalMetodologiasWeb
             if (bllResult.Ok)
             {
                 _bitacora.RegistrarBitacora(new BEBitacora(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), bllResult.Data.Usuario, "Logueo de usuario", "Módulo Login"));
-                Session["Rol"] = bllResult.Data.Rol;
-                Session["Usuario"] = bllResult.Data.Usuario;
+                Session["Usuario"] = bllResult.Data;
                 Response.Redirect($"{bllResult.Data.DefaultPage}.aspx");
             }
         }

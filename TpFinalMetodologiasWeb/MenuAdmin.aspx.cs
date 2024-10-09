@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,11 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace TpFinalMetodologiasWeb
 {
-    public partial class MenuAdmin : System.Web.UI.Page
+    public partial class MenuAdmin : ResultPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidatePermission(RolUsuario.WEB_MASTER);
         }
     }
 }

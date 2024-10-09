@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace TpFinalMetodologiasWeb
 {
-    public partial class DesbloquearUsuarios : System.Web.UI.Page
+    public partial class DesbloquearUsuarios : ResultPage
     {
         private BLLUsuario BLLUsuario;
         private List<BEUsuario> usuariosBloqueados;
@@ -20,6 +20,7 @@ namespace TpFinalMetodologiasWeb
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidatePermission(RolUsuario.WEB_MASTER);
             if (!IsPostBack)
             {
                 CargarUsuariosBloqueados();

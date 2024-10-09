@@ -15,6 +15,7 @@ namespace TpFinalMetodologiasWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidatePermission(RolUsuario.WEB_MASTER);
             if (!IsPostBack)
             {
                 CargarProductos();
