@@ -103,5 +103,31 @@ namespace BLL
             }
             
         }
+
+        public Result<List<BEUsuario>> GetUsuariosBloqueados()
+        {
+            try
+            {
+                var result = ObjUsuario.GetUsuariosBloqueados();
+                return Result<List<BEUsuario>>.Success(result);
+            }
+            catch (Exception ex)
+            {
+                return Result<List<BEUsuario>>.Error($"Ha ocurrido un error: {ex.Message}", null);
+            }
+        }
+
+        public Result<bool> DesbloquearUsuario(string usuario)
+        {
+            try
+            {
+                var dalResult = ObjUsuario.DesbloquearUsuario(usuario);
+                return Result<bool>.Success(dalResult);
+            }
+            catch (Exception ex)
+            {
+                return Result<bool>.Error($"Ha ocurrido el siguiente error: {ex.Message}", false);
+            }
+        }
     }
 }

@@ -104,5 +104,24 @@ namespace DAL
             }
             return null;
         }
+
+        public List<BEUsuario> GetUsuariosBloqueados()
+        {
+            var conn = DALConexion.GetInstance;
+            var list = new List<BEUsuario>();
+            var datatable = conn.Leer($"select * from Usuarios where Bloqueado = 1", null);
+            foreach (DataRow dr in datatable.Rows)
+            {
+                list.Add(MapHelper.MapearUsuario(dr));
+            }
+            return list;
+        }
+
+        public bool DesbloquearUsuario(string usuario)
+        {
+            var conn = DALConexion.GetInstance;
+            var result = conn.Escribir($"update Usuarios set Bloqueado = 0 where usuario = @usuario", new SqlParameter[] {new SqlParameter("@usuario", usuario)});
+            return result > 0;
+        }
     }
 }

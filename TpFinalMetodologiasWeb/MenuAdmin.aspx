@@ -59,13 +59,9 @@
                 <i class="fa fa-box"></i>
                 <h3>Agregar Producto</h3>
             </a>
-            <a href="Opcion3.aspx" class="option-card">
-                <i class="fa fa-question-circle"></i>
-                <h3>Opción 3</h3>
-            </a>
-            <a href="Opcion4.aspx" class="option-card">
-                <i class="fa fa-question-circle"></i>
-                <h3>Opción 4</h3>
+            <a href="DesbloquearUsuarios.aspx" class="option-card">
+                <i class="fa fa-user-lock"></i>
+                <h3>Usuarios Bloqueados</h3>
             </a>
         </div>
     </div>
