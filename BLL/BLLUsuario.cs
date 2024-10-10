@@ -93,8 +93,22 @@ namespace BLL
                 var dalResul = ObjUsuario.Login(username, password);
                 if (dalResul == null)
                     return Result<BEUsuario>.Error("Usuario o Contraseña incorrecta", dalResul);
+                if(dalResul.Contraseña != password && dalResul.IntentosRestantes - 1 > 0)
+                {
+                    dalResul.IntentosRestantes -= 1;
+                    ObjUsuario.ActualizarIntentosRestantes(dalResul.Usuario, dalResul.IntentosRestantes);
+                    return Result<BEUsuario>.Error($"Contraseña incorrecta para el usuario {username}. Quedan {dalResul.IntentosRestantes} intentos.", dalResul);
+                }
+                if (dalResul.Contraseña != password && dalResul.IntentosRestantes - 1 == 0)
+                {
+                    dalResul.IntentosRestantes = 0;
+                    dalResul.Bloqueado = true;
+                    ObjUsuario.BloquearUsuario(dalResul.Usuario);
+                    return Result<BEUsuario>.Error($"El usuario {dalResul.Usuario} ha sido bloqueado por exceso de intentos. Comuniquese con el administrador", dalResul);
+                }
                 if (dalResul.Bloqueado)
                     return Result<BEUsuario>.Error("El usuario se encuentra bloqueado. Comuniquese con el administrador", dalResul);
+                ObjUsuario.ReestablecerIntentos(username);
                 return Result<BEUsuario>.Success(dalResul);
             }
             catch (Exception ex)

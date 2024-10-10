@@ -97,7 +97,7 @@ namespace DAL
         public BEUsuario Login(string username, string password)
         {
             var conn = DALConexion.GetInstance;
-            var datatable = conn.Leer($"SELECT * FROM USUARIOS WHERE usuario = '{username}' and contraseña = '{password}'", null);
+            var datatable = conn.Leer($"SELECT * FROM USUARIOS WHERE usuario = '{username}'", null);
             foreach (DataRow dr in datatable.Rows)
             {
                 return MapHelper.MapearUsuario(dr);
@@ -120,7 +120,32 @@ namespace DAL
         public bool DesbloquearUsuario(string usuario)
         {
             var conn = DALConexion.GetInstance;
-            var result = conn.Escribir($"update Usuarios set Bloqueado = 0 where usuario = @usuario", new SqlParameter[] {new SqlParameter("@usuario", usuario)});
+            var result = conn.Escribir($"update Usuarios set Bloqueado = 0 , IntentosRestantes = 3 where usuario = @usuario", new SqlParameter[] {new SqlParameter("@usuario", usuario)});
+            return result > 0;
+        }
+
+        public bool BloquearUsuario(string usuario)
+        {
+            var conn = DALConexion.GetInstance;
+            var result = conn.Escribir($"update Usuarios set Bloqueado = 1, IntentosRestantes = 0 where usuario = @usuario", new SqlParameter[] { new SqlParameter("@usuario", usuario) });
+            return result > 0;
+        }
+
+        public bool ActualizarIntentosRestantes(string usuario, int intentosRestantes)
+        {
+            var conn = DALConexion.GetInstance;
+            var result = conn.Escribir($"update Usuarios set IntentosRestantes = @intentosRestantes where usuario = @usuario", new SqlParameter[] 
+            { 
+                new SqlParameter("@usuario", usuario),
+                new SqlParameter("@intentosRestantes", intentosRestantes)
+            });
+            return result > 0;
+        }
+
+        public bool ReestablecerIntentos(string usuario)
+        {
+            var conn = DALConexion.GetInstance;
+            var result = conn.Escribir($"update Usuarios set IntentosRestantes = 3 where usuario = @usuario", new SqlParameter[] { new SqlParameter("@usuario", usuario) });
             return result > 0;
         }
     }
